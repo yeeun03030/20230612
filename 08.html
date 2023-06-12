@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            // css 메소드 하나에 여러 속성과 값을 설정
+            $(".box").css({
+                width: 100,
+                height: 100,
+                float: "left",
+                backgroundColor: "blue",
+                margin: 10
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
