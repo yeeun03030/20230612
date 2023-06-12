@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            var clearQueue = false; // true: 모든 애니메이션 중지, false: 현재 실행중인 애니메이션만 중지
+            var goToEnd = false; // true: 어떤 상태로 애니메이션이 중지 될지 설정 / 현재 시점에서 중지 or 종료시점에서 중지
+
+            $("#clearQueue").change(function () {
+                clearQueue = $(this).prop("checked") // checked 면 true, 아니면 false 반환
+            });
+
+            $("#goToEnd").change(function () {   
+                goToEnd = $(this).prop("checked") // checked 면 true, 아니면 false 반환
+            });
+
+            $("#stopButton").change(function () {
+                $("#box").stop(clearQueue, goToEnd);
+            });
+
+            $("#box").css({
+                width: 100,
+                height: 100,
+                backgroundColor: "magenta"
+            });
+
+            setInterval(function () {
+                $("#box").animate({
+                    width: 200,
+                    height: 200
+                }, 1000).delay(1000).animate({
+                    width: 100,
+                    height: 100
+                }, 1000);
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <label>ClearQueue</label>
+    <input type="checkbox" id="clearQueue"><br>
+    <label>goToEnd</label>
+    <input type="checkbox" id="goToEnd"><br>
+
+    <button id="stopButton">Stop</button>
+    <div id="box"></div>
+</body>
+</html>
