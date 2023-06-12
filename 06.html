@@ -8,11 +8,9 @@
     <script src="../js/jquery-3.7.0.js"></script>
     <script>
         $(document).ready(function () {
-            // attr 메소드에 여러 속성과 값을 설정하는
-            $("img").attr({
-                src: "http://placehold.it/100x100",
-                width: 100
-            });
+            // 메소드 체이닝으로 바꿔볼거임
+            $("img").attr("src", "http://placehold.it/100x100")
+            .attr("width", "100");
         });
     </script>
 </head>
