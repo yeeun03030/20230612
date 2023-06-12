@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                var value = $("input").val();
+
+                if(value.replace(/[가-힣]/g, '').length == 0) { // replace 대체하다
+                    // 유효성 검사 성공
+                    alert("정상진행");
+                } else {
+                    // 유효성 검사 실패
+                    alert("한글로 이름을 입력해야 합니다.");
+                    event.preventDefault();
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <form action="01.html">
+        <label for="name">name</label>
+        <input type="text" name="name">
+        <input type="submit">
+    </form>
+</body>
+</html>
